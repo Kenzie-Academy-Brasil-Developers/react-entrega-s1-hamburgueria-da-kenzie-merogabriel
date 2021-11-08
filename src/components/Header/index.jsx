@@ -15,7 +15,12 @@ function Header({ filterProducts }) {
           placeholder="Digitar Pesquisa"
           onChange={(e) => setFiltro(e.target.value)}
         />
-        <button className='defaultButton' onClick={() => filterProducts(filtro)}>Pesquisar</button>
+        <button
+          className="defaultButton"
+          onClick={() => filterProducts(filtro)}
+        >
+          Pesquisar
+        </button>
       </div>
     </div>
   );

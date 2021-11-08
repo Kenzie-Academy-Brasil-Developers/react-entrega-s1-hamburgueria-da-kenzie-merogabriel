@@ -58,10 +58,12 @@ function App() {
 
   function filterProducts(search) {
     setFilteredProducts(
-      products.filter((produto) => {
+      products.filter((products) => {
         return (
-          produto.category.toLowerCase().replace(/[^a-zA-Zs]/g, "") ===
-          search.toLowerCase().replace(/[^a-zA-Zs]/g, "")
+          (products.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+            products.category.toLowerCase().indexOf(search.toLowerCase()) >
+              -1) &&
+          products.name
         );
       })
     );
@@ -69,7 +71,6 @@ function App() {
 
   function toCart(product) {
     setCarrinho([...carrinho, product]);
-    console.log(carrinho);
   }
 
   return (
